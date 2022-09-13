@@ -6,9 +6,157 @@
     --light-gray: hsl(0, 0%, 98%);
     --grey-blue: hsl(216, 30%, 68%);
 
+    --ff-heading: 'DM Serif Display', serif;
+    --ff-body: 'Karla', sans-serif;
+
+    --padding: 1.5rem;
+
 }
+
 /* 
 font-family: 'DM Serif Display', serif;
 
 font-family: 'Karla', sans-serif; */
 
+
+body {
+    font-family: var(--ff-body);
+    padding-inline: var(--padding);
+}
+
+.container {
+    max-width: 1110px;
+    margin-inline: auto;
+}
+
+.visually-hidden {
+    clip: rect(0 0 0 0);
+    clip-path: inset(50%);
+    height: 1px;
+    overflow: hidden;
+    position: absolute;
+    white-space: nowrap;
+    width: 1px;
+}
+
+.button {
+    padding: 1.2rem 3rem;
+    background: none;
+    cursor: pointer;
+    outline: none;
+}
+
+
+
+/*===============   header with desktop first layout    =================*/
+
+
+.primary-header {
+    min-height: 8rem;
+    display: grid;
+    grid-auto-flow: column;
+    justify-content: space-between;
+    align-items: center;
+    font-family: var(--ff-body);
+    white-space: nowrap;
+}
+
+.logo img {
+    max-width: 100%;
+}
+
+.primary-nav {
+    display: grid;
+    grid-auto-flow: column;
+    gap: min(5vw, 3rem);
+    align-items: center;
+
+    font-size: 1.6rem;
+    word-wrap: break-word;
+}
+
+.primary-nav a {
+    color: var(--clr-body);
+    text-decoration: none;
+    text-transform: uppercase;
+    font-weight: 700;
+}
+
+.nav-button {
+    font-size: 1.6rem;
+    font-family: var(--ff-body);
+    color: var(--clr-primary);
+    text-transform: uppercase;
+    font-weight: 700;
+
+    border: 2px solid var(--clr-primary);
+}
+
+.mobile-toggle {
+    display: none;
+}
+
+.mobile-toggle button {
+    border: none;
+    background: none;
+    cursor: pointer;
+}
+
+.close {
+    display: none;
+}
+
+
+/*===========   Mobile Navigation   ================*/
+@media (max-width: 42em) {
+
+    .primary-nav {
+        position: absolute;
+        top: 8rem;
+        right: 0;
+        left: 0;
+        text-align: center;
+        grid-auto-flow: row;
+        background: var(--clr-primary);
+        height: 70vh;
+        align-content: start;
+        gap: min(7vh, 4rem);
+        padding-top: 5rem;
+        padding-inline: 2rem;
+
+        background-image: url(../images/bg-pattern-mobile-nav.svg);
+        background-repeat: no-repeat;
+        background-position: bottom;
+        background-size: 100% 40%;
+    }
+
+    .primary-nav a {
+        color: white;
+        font-size: 2rem;
+    }
+
+    .nav-button {
+        width: 100%;
+        color: white;
+        border-color: white;
+        padding: 2rem 2rem;
+        font-size: 2rem;
+    }
+
+
+    .mobile-toggle {
+        display: block;
+    }
+
+    .close {
+        display: block;
+    }
+
+    .hamburger-toggle {
+        display: none;
+    }
+
+    .primary-nav-toggle {
+        display: none;
+    }
+}
