@@ -21,7 +21,6 @@ mobileToggle.addEventListener('click', () => {
             hamburger.classList.remove('hamburger-toggle')
             hamburgerClose.classList.add('hamburger-toggle')
             primaryNav.classList.add('primary-nav-toggle')
-
         })
     });
 })
